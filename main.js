@@ -28,7 +28,7 @@ client.on('message', message => {
         for(let i = 0; i < args.length; i++) {
             champion += args[i];
         };
-        message.channel.send(`www.probuilds.net/champions/details/${champion}`);
+        message.channel.send(`https://probuilds.net/champions/details/${champion}`);
     }
 });
 
