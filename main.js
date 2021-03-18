@@ -1,5 +1,5 @@
 const { Client } = require('discord.js');
-const { TOKEN, PREFIX } = require('./config');
+const { PREFIX } = require('./config');
 const client = new Client();
 
 client.on('ready', () => {
@@ -23,6 +23,7 @@ client.on('message', message => {
         };
         message.channel.send(`https://euw.op.gg/summoner/userName=${pseudo}`);
     };
+    if (command === 'build') message.channel.send(`http://www.op.gg/champion/${args}/statistics/`)
 });
 
 client.login(process.env.TOKEN);
