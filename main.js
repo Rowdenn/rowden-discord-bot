@@ -27,11 +27,8 @@ client.on('message', message => {
     if (command === 'build') { 
         for(let i = 0; i < args.length; i++) {
             champion += args[i];
-            if (i != args.length - 1) {
-                champion += "+"
-            }
         };
-        message.channel.send(`http://www.op.gg/champion/${champion}/statistics/`);
+        message.channel.send(`www.probuilds.net/champions/details/${champion}`);
     }
 });
 
