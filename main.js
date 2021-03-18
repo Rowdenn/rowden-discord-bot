@@ -2,6 +2,18 @@ const { Client } = require('discord.js');
 const { PREFIX } = require('./config');
 const client = new Client();
 
+module.exports = {
+    name: 'qiqi',
+    description: 'génére une phrase aléatoire de qiqi',
+    args: false,
+    execute(message) {
+        const embed = new Discord.MessageEmbed()
+            .setColor('#ed3452')
+            .setDescription(generateRandomSentence('./resources/qiqi.json', 291));
+        return message.channel.send(embed);
+    },
+};
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -12,6 +24,15 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
     let pseudo = "";
     let champion = "";
+    const phrasesQiqi = [
+        "C'est OP",
+        "GO NERF",
+        "Salope",
+        "Hé viens 1v1",
+        "La juiffannnnce",
+        "Oui la vraiment",
+        "Suce ma grosse bite de noir"
+    ];
 
     if (command === 'server') message.channel.send(`Je suis sur le serveur ${message.guild.name}.`);
     if (command === 'user') message.channel.send(`Je suis l'utilisateur ${message.author.tag}.`);
@@ -29,7 +50,7 @@ client.on('message', message => {
             champion += args[i];
         };
         message.channel.send(`https://probuilds.net/champions/details/${champion}`);
-    }
+    };
 });
 
 client.login(process.env.TOKEN);
