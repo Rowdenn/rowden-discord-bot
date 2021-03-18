@@ -23,7 +23,7 @@ client.on('message', message => {
         };
         message.channel.send(`https://euw.op.gg/summoner/userName=${pseudo}`);
     };
-    if (command === 'build') message.channel.send(`http://www.op.gg/champion/${args}/statistics/`)
+    if (command === 'build') message.channel.send(`http://www.op.gg/champion/${args}/statistics/`);
 });
 
 client.login(process.env.TOKEN);
