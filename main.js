@@ -1,20 +1,6 @@
 const { Client } = require('discord.js');
 const { PREFIX } = require('./config');
-const root = require('app-root-path');
-const { generateRandomSentence } = require(root + '/src/generateRandomSentence');
 const client = new Client();
-
-module.exports = {
-    name: 'qiqi',
-    description: 'génére une phrase aléatoire de qiqi',
-    args: false,
-    execute(message) {
-        const embed = new Discord.MessageEmbed()
-            .setColor('#ed3452')
-            .setDescription(generateRandomSentence('./resources/qiqi.json', 291));
-        return message.channel.send(embed);
-    },
-};
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
