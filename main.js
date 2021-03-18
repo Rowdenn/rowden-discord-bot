@@ -30,6 +30,22 @@ client.on('message', message => {
         };
         message.channel.send(`https://probuilds.net/champions/details/${champion}`);
     };
+    if (command === 'qiqi') {
+        const phrasesQiqi = [
+            "C'est OP",
+            "Go NERF",
+            "SALOPE",
+            "Hé viens 1v1 LA VRAIMENT",
+            "La juiffannnnce",
+            "Ta mère la juive",
+            "Le noir il court vite",
+            "Oui la vraiment",
+            "Suce ma grosse bite de noir",
+            "AH BOOOOOOOOOOOOOOON"
+        ];
+        const reponse = phrasesQiqi[Math.floor(Math.random() * phrasesQiqi.length)];
+        message.channel.send(reponse);
+    };
 });
 
 client.login(process.env.TOKEN);
