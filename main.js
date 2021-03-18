@@ -1,5 +1,7 @@
 const { Client } = require('discord.js');
 const { PREFIX } = require('./config');
+const root = require('app-root-path');
+const { generateRandomSentence } = require(root + '/src/generateRandomSentence');
 const client = new Client();
 
 module.exports = {
@@ -24,15 +26,6 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
     let pseudo = "";
     let champion = "";
-    const phrasesQiqi = [
-        "C'est OP",
-        "GO NERF",
-        "Salope",
-        "Hé viens 1v1",
-        "La juiffannnnce",
-        "Oui la vraiment",
-        "Suce ma grosse bite de noir"
-    ];
 
     if (command === 'server') message.channel.send(`Je suis sur le serveur ${message.guild.name}.`);
     if (command === 'user') message.channel.send(`Je suis l'utilisateur ${message.author.tag}.`);
