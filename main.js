@@ -41,7 +41,10 @@ client.on('message', message => {
             "Le noir il court vite",
             "Oui la vraiment",
             "Suce ma grosse bite de noir",
-            "AH BOOOOOOOOOOOOOOON"
+            "AH BOOOOOOOOOOOOOOON",
+            "Go ff je sais même pas pourquoi je joue",
+            "J'AI PAS DE TEAM",
+            "Hé ferme là"
         ];
         const reponse = phrasesQiqi[Math.floor(Math.random() * phrasesQiqi.length)];
         message.channel.send(reponse);
