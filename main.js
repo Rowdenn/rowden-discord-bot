@@ -11,6 +11,7 @@ client.on('message', message => {
     const args = message.content.slice(PREFIX.length).split(/ +/);
     const command = args.shift().toLowerCase();
     let pseudo = "";
+    let champion = "";
 
     if (command === 'server') message.channel.send(`Je suis sur le serveur ${message.guild.name}.`);
     if (command === 'user') message.channel.send(`Je suis l'utilisateur ${message.author.tag}.`);
@@ -23,7 +24,15 @@ client.on('message', message => {
         };
         message.channel.send(`https://euw.op.gg/summoner/userName=${pseudo}`);
     };
-    if (command === 'build') message.channel.send(`http://www.op.gg/champion/${args}/statistics/`);
+    if (command === 'build') { 
+        for(let i = 0; i < args.length; i++) {
+            champion += args[i];
+            if (i != args.length - 1) {
+                champion += "+"
+            }
+        };
+        message.channel.send(`http://www.op.gg/champion/${champion}/statistics/`);
+    }
 });
 
 client.login(process.env.TOKEN);
