@@ -13,7 +13,8 @@ module.exports.run = (client, message, args) => {
         "J'AI PAS DE TEAM",
         "Hé ferme là",
         "Je m'en fou",
-        "La satou"
+        "La satou",
+        "Bande de silvers de merde"
     ];
     const reponse = phrasesQiqi[Math.floor(Math.random() * phrasesQiqi.length)];
     message.channel.send(reponse);
