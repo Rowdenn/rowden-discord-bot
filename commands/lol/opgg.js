@@ -11,8 +11,11 @@ module.exports.run = (client, message, args) => {
 
 module.exports.help = {
     name: "opgg",
+    aliases: ['opgg'],
     description: "Renvoie le lien opgg du pseudo mentionné",
     usage: '<ton_argument>',
+    isUserAdmin: false,
+    permissions: false,
     cooldown: 10,
     args: true
 };
