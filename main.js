@@ -1,5 +1,5 @@
 const { Client, Collection } = require('discord.js');
-const { PREFIX } = require('./config');
+const { TOKEN, PREFIX } = require('./config');
 const { readdirSync } = require("fs");
 
 const client = new Client();
@@ -23,9 +23,12 @@ client.on('message', message => {
     if (!message.content.startsWith(PREFIX) || message.author.bot) return;
     const args = message.content.slice(PREFIX.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
+    const user = message.mentions.users.first();
 
-    if (!client.commands.has(commandName)) return message.channel.send("Elle existe pas cette commande sale fdp");
-    const command = client.commands.get(commandName);
+    const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.help.aliases && cmd.help.aliases.includes(commandName));
+    if (!command) return;
+
+    if (command.help.permissions && !message.member.hasPermission('BAN_MEMBERS')) return message.reply("T'as pas les permissions pour ça gros connard");
 
     if (command.help.args && !args.length) {
         let noArgsReply = `Il me faut des arguments pour cette commande, ${message.author}!`;
@@ -34,6 +37,10 @@ client.on('message', message => {
 
         return message.channel.send(noArgsReply);
     }
+
+    if (command.help.isUserAdmin && !user) return message.reply('Il faut mentionner un utilisateur');
+
+    if (command.help.isUserAdmin && message.guild.member(user).hasPermission('BAN_MEMBERS')) return message.reply(`Tu peux pas utiliser la commande \`${command.help.name}\` sur cet utilisateur`);
 
     if (!client.cooldowns.has(command.help.name)) {
         client.cooldowns.set(command.help.name, new Collection());
@@ -49,7 +56,7 @@ client.on('message', message => {
 
         if (timeNow < cdExpirationTime) {
             timeLeft = (cdExpirationTime - timeNow) / 1000;
-            return message.reply(`Tu pourras retaper la commande \`${command.help.name}\` dans ${timeLeft.toFixed(0)} seconde(s).`);
+            return message.reply(`Tu pourras retaper la commande \`${command.help.name}\` dans ${timeLeft.toFixed(0)} seconde(s) bg`);
         }
     }
 
@@ -66,4 +73,4 @@ client.on('ready', () => {
     });
   });
 
-client.login(process.env.TOKEN);
+client.login(TOKEN);
