@@ -5,8 +5,11 @@ module.exports.run = (client, message, args) => {
 
 module.exports.help = {
     name: 'userinfo',
+    aliases: ['info'],
     description: 'Renvoie les informations d\'un utilisateur mentionné.',
     usage: '<ton_argument>',
+    isUserAdmin: true,
+    permissions: true,
     cooldown: 10,
     args: true
 };
