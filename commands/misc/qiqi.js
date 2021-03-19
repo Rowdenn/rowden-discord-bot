@@ -14,7 +14,10 @@ module.exports.run = (client, message, args) => {
         "Hé ferme là",
         "Je m'en fou",
         "La satou",
-        "Bande de silvers de merde"
+        "Bande de silvers de merde",
+        "Faut nerf les noirs",
+        "C'est l'afrique au bot",
+        "LA FAMILLE DE NOIR LA"
     ];
     const reponse = phrasesQiqi[Math.floor(Math.random() * phrasesQiqi.length)];
     message.channel.send(reponse);
