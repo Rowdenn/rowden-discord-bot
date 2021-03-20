@@ -23,7 +23,7 @@ const loadEvents = (dir = "./events/") => {
 
         for (const event of events) {
             const evt = require(`${dir}/${dirs}/${event}`);
-            const evtName = eveny.split(".")[0];
+            const evtName = event.split(".")[0];
             client.on(evtName, evt.bind(null, client));
             console.log(`Evenement chargé: ${evtName}`);
         };
