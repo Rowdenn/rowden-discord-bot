@@ -1,5 +1,5 @@
 const { Client, Collection } = require('discord.js');
-const { PREFIX } = require('./config');
+const { TOKEN, PREFIX } = require('./config');
 const { readdirSync } = require("fs");
 
 const client = new Client();
@@ -73,4 +73,4 @@ client.on('ready', () => {
     });
   });
 
-client.login(process.env.TOKEN);
+client.login(TOKEN);
