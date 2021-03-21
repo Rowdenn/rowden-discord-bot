@@ -1,3 +1,5 @@
+const { MESSAGES } = require("../../util/constants");
+
 module.exports.run = (client, message, args) => {
     let role = message.guild.roles.cache.find (r => r.name === args.toString());
         if (role) {
@@ -11,14 +13,4 @@ module.exports.run = (client, message, args) => {
         }
 };
 
-module.exports.help = {
-    name: 'remove',
-    aliases: ['remove', 'rm'],
-    category: 'roles',
-    description: 'Supprimer un rôle',
-    usage: '<role_a_enlever>',
-    isUserAdmin: true,
-    permissions: true,
-    cooldown: 10,
-    args: true
-};
+module.exports.help = MESSAGES.COMMANDS.ROLES.REMOVE;

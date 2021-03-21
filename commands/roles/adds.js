@@ -1,3 +1,5 @@
+const { MESSAGES } = require("../../util/constants");
+
 module.exports.run = (client, message, args) => {
     args.forEach(rName => {
         let role = message.guild.roles.cache.find (r => r.name === rName.toString());
@@ -14,14 +16,4 @@ module.exports.run = (client, message, args) => {
     });
 };
 
-module.exports.help = {
-    name: 'adds',
-    aliases: ['adds'],
-    category: 'roles',
-    description: 'Ajouter plusieurs rôles',
-    usage: '<roles_a_ajouter>',
-    isUserAdmin: true,
-    permissions: true,
-    cooldown: 10,
-    args: true
-};
+module.exports.help = MESSAGES.COMMANDS.ROLES.ADDS;

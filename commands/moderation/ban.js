@@ -1,3 +1,4 @@
+const { MESSAGES } = require("../../util/constants");
 const { MessageEmbed } = require("discord.js");
 
 module.exports.run = (client, message, args) => {
@@ -16,14 +17,4 @@ module.exports.run = (client, message, args) => {
     client.channels.cache.get('822488942988623873').send(embed);
 };
 
-module.exports.help = {
-    name: "ban",
-    aliases: ['ban'],
-    category: 'moderation',
-    description: "Bannir un utilisateur",
-    usage: '<@user> <raison>',
-    isUserAdmin: true,
-    permissions: true,
-    cooldown: 10,
-    args: true
-};
+module.exports.help = MESSAGES.COMMANDS.MODERATION.BAN;

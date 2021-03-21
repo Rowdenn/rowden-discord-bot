@@ -1,3 +1,5 @@
+const { MESSAGES } = require("../../util/constants");
+
 module.exports.run = (client, message, args) => {
     let pseudo = "";
         for(let i = 0; i < args.length; i++) {
@@ -9,14 +11,4 @@ module.exports.run = (client, message, args) => {
         message.channel.send(`https://euw.op.gg/summoner/userName=${pseudo}`);
 };
 
-module.exports.help = {
-    name: "opgg",
-    aliases: ['opgg'],
-    category: 'lol',
-    description: "Renvoie le lien opgg du pseudo mentionné",
-    usage: '<pseudo>',
-    isUserAdmin: false,
-    permissions: false,
-    cooldown: 10,
-    args: true
-};
+module.exports.help = MESSAGES.COMMANDS.LOL.OPGG;

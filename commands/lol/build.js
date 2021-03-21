@@ -1,3 +1,5 @@
+const { MESSAGES } = require("../../util/constants");
+
 module.exports.run = (client, message, args) => {
     let champion = '';
         for(let i = 0; i < args.length; i++) {
@@ -6,14 +8,4 @@ module.exports.run = (client, message, args) => {
         message.channel.send(`https://probuilds.net/champions/details/${champion}`);
 };
 
-module.exports.help = {
-    name: 'build',
-    aliases: ['build', 'probuild'],
-    category: 'lol',
-    description: 'Envoie le build du champion mentionné',
-    cooldown: 10,
-    usage: '<champion>',
-    isUserAdmin: false,
-    permissions: false,
-    args: true
-};
+module.exports.help = MESSAGES.COMMANDS.LOL.BUILD;

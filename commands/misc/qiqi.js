@@ -1,3 +1,5 @@
+const { MESSAGES } = require("../../util/constants");
+
 module.exports.run = (client, message, args) => {
     const phrasesQiqi = [
         "C'est OP",
@@ -23,14 +25,4 @@ module.exports.run = (client, message, args) => {
     message.channel.send(reponse);
 };
 
-module.exports.help = {
-    name: 'qiqi',
-    aliases: ['qiqi'],
-    category: 'misc',
-    description: 'Répond avec des phrases cultes du mongole de qiqi',
-    usage: '',
-    isUserAdmin: false,
-    permissions: false,
-    cooldown: 5,
-    args: false
-};
+module.exports.help = MESSAGES.COMMANDS.MISC.QIQI;
