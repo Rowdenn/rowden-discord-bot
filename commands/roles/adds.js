@@ -17,8 +17,9 @@ module.exports.run = (client, message, args) => {
 module.exports.help = {
     name: 'adds',
     aliases: ['adds'],
-    description: 'Ajouter plusieurs rôles !',
-    usage: '<ton_argument>',
+    category: 'roles',
+    description: 'Ajouter plusieurs rôles',
+    usage: '<roles_a_ajouter>',
     isUserAdmin: true,
     permissions: true,
     cooldown: 10,

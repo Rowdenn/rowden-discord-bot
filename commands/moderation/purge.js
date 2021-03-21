@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
 
     const embed = new MessageEmbed()
         .setAuthor(message.author.username, message.author.avatarURL())
-        .setColor('#ffa500')
+        .setColor('#287db5')
         .setDescription(`**Action**: purge\n**Nombre de messages**: ${args[0]}\n**Salon**: ${message.channel}`)
 
     client.channels.cache.get('822488942988623873').send(embed);

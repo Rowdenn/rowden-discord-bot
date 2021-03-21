@@ -9,9 +9,10 @@ module.exports.run = (client, message, args) => {
 module.exports.help = {
     name: 'build',
     aliases: ['build', 'probuild'],
+    category: 'lol',
     description: 'Envoie le build du champion mentionné',
     cooldown: 10,
-    usage: '<ton_argument>',
+    usage: '<champion>',
     isUserAdmin: false,
     permissions: false,
     args: true

@@ -14,8 +14,9 @@ module.exports.run = (client, message, args) => {
 module.exports.help = {
     name: 'remove',
     aliases: ['remove', 'rm'],
-    description: 'Supprimer un rôle !',
-    usage: '<ton_argument>',
+    category: 'roles',
+    description: 'Supprimer un rôle',
+    usage: '<role_a_enlever>',
     isUserAdmin: true,
     permissions: true,
     cooldown: 10,

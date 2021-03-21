@@ -22,9 +22,10 @@ module.exports.run = (client, message, args) => {
 module.exports.help = {
     name: "unmute",
     aliases: ['unmute'],
+    category: 'moderation',
     description: "Unmute un utilisateur",
     usage: '<@user>',
-    isUserAdmin: true,
+    isUserAdmin: false,
     permissions: true,
     cooldown: 10,
     args: true

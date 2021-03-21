@@ -26,6 +26,7 @@ module.exports.run = (client, message, args) => {
 module.exports.help = {
     name: 'qiqi',
     aliases: ['qiqi'],
+    category: 'misc',
     description: 'Répond avec des phrases cultes du mongole de qiqi',
     usage: '',
     isUserAdmin: false,

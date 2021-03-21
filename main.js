@@ -1,4 +1,5 @@
 const { Client, Collection } = require('discord.js');
+const { TOKEN } = require('./config');
 const { readdirSync } = require("fs");
 
 const client = new Client();
@@ -32,4 +33,4 @@ const loadEvents = (dir = "./events/") => {
 loadCommands();
 loadEvents();
 
-client.login(process.env.TOKEN);
+client.login(TOKEN);

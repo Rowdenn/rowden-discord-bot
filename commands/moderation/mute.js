@@ -1,4 +1,4 @@
-const ms = require('ms');
+const ms = require("ms");
 const { MessageEmbed } = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
@@ -33,7 +33,7 @@ module.exports.run = async (client, message, args) => {
 
     const embed = new MessageEmbed()
         .setAuthor(`${user.user.username} (${user.user.id})`, user.user.avatarURL())
-        .setColor('#ffa500')
+        .setColor('#287db5')
         .setDescription(`**Action**: mute\n**Temps**: ${ms(ms(muteTime))}`)
         .setTimestamp()
         .setFooter(message.author.username, message.author.avatarURL());
@@ -44,6 +44,7 @@ module.exports.run = async (client, message, args) => {
 module.exports.help = {
     name: "mute",
     aliases: ['mute'],
+    category: 'moderation',
     description: "Mute un utilisateur",
     usage: '<@user> <temps>',
     isUserAdmin: true,
