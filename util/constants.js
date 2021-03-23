@@ -94,7 +94,7 @@ const MESSAGES = {
                 aliases: ['prune'],
                 category: 'moderation',
                 description: "Purge un nombre de message spécifié sur un utilisateur",
-                usage: '<nbr_messages>',
+                usage: '<@user> <nbr_messages>',
                 isUserAdmin: true,
                 permissions: true,
                 cooldown: 10,
